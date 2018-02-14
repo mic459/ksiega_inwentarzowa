@@ -29,22 +29,27 @@ git config --global alias.up rebase
 git config --global alias.ci commit
 
 8. POBIERANIE REPOZYTORIUM:
-a) krok 6
-b) git clone https://mic459@bitbucket.org/abstergoteam/ksiega_inwentarzowa.git
-c) za pomoc¹ eksploratora Windows wchodzimy do folderu GitFolder/ksiega_inwentarzowa na pulpicie i kopiujemy folder Ksiega_Inwentarzowa do folderu z projektami NetBeans
+a) krok 3
+b) krok 5 i 6
+c) git clone https://mic459@bitbucket.org/abstergoteam/ksiega_inwentarzowa.git
+d) za pomoc¹ eksploratora Windows wchodzimy do folderu GitFolder/ksiega_inwentarzowa na pulpicie i kopiujemy folder Ksiega_Inwentarzowa do folderu z projektami NetBeans
 
 9. AKTUALIZOWANIE REPOZYTORIUM (UPLOAD):
-a) krok 8a i 8b
-b) za pomoc¹ eksploratora Windows wchodzimy do folderu GitFolder/ksiega_inwentarzowa i usuwamy folder Ksiega_Inwentarzowa
-c) do tego folderu (GitFolder/ksiega_inwentarzowa) za pomoc¹ eksploratora Windows kopiujemy folder z naszym projektem z NetBeansa
-d) Robimy commita (wpisz do cmd; git status opcjonalnie):
+a) krok 3
+b) krok 5 i 6
+c) krok 8c
+d) za pomoc¹ eksploratora Windows wchodzimy do folderu GitFolder/ksiega_inwentarzowa i usuwamy folder Ksiega_Inwentarzowa
+e) do tego folderu (GitFolder/ksiega_inwentarzowa) za pomoc¹ eksploratora Windows kopiujemy folder z naszym projektem z NetBeansa
+f) powrót do CMD, wpisujemy:
+cd ksiega_inwentarzowa
+g) Robimy commita (wpisz do cmd; git status opcjonalnie):
 git status
 git add –A
 git status
 git commit -m "TUTAJ NAZWA OPISU COMMITA"
 git status
-e) Upload repozytorium na serwer:
+h) Upload repozytorium na serwer:
 git push -u https://mic459@bitbucket.org/abstergoteam/ksiega_inwentarzowa.git
-f) Podajemy login i has³o.
+i) Podajemy login i has³o.
 
 10. ¯eby przejrzeæ repozytorium globalne logujemy siê do https://bitbucket.org/ i przechodzimy do https://bitbucket.org/abstergoteam/ksiega_inwentarzowa/src.
