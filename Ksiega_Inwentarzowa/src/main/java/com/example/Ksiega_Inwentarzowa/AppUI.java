@@ -129,9 +129,11 @@ public class AppUI extends UI{
         ItemsList = rest.getAllItems();
         List<Cell> Cells = rest.getAllCells();
         List<Employee> Employees = rest.getAllEmployees();
+        if(RepositoriesEmpty(inventoryRepository, employeeRepository)){
+            addToDatabaseDefaultValuesFromERP(ItemsList, Employees, inventoryRepository, employeeRepository);
+        }
         employeeBazaList = GetEmployeesFromOurBase(employeeRepository);
         inventoryBazaList = GetItemsFromOurBase(inventoryRepository);
-        //addToDatabaseDefaultValuesFromERP(ItemsList, Employees, inventoryRepository, employeeRepository);
         for (InventoryBaza itemBaza : inventoryBazaList){
             String id = itemBaza.getInventoryNumber();
             for(Inventory item : ItemsList) {
@@ -162,15 +164,19 @@ public class AppUI extends UI{
         return ItemsList;
     }
     
+    static boolean RepositoriesEmpty(InventoryRepository inventoryRepository, EmployeeRepository employeeRepository){
+        return (inventoryRepository.findAll().isEmpty() || employeeRepository.findAll().isEmpty());
+    }
+    
     static List<InventoryBaza> GetItemsFromOurBase(InventoryRepository repository){
         List<InventoryBaza> inventoryBazaList = repository.findAll();
-        for(InventoryBaza i : inventoryBazaList){
+        /*for(InventoryBaza i : inventoryBazaList){
             if (i.getEmployeeId() == null){
                 System.out.println(i.getInventoryNumber() + " - " + null);
             } else {
                 System.out.println(i.getInventoryNumber() + " - " + i.getEmployeeId().getEmployeeId());
             }
-        }
+        }*/
         return inventoryBazaList;
     }
     

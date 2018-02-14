@@ -91,4 +91,27 @@ public class Controller_Rest {
         LoggedUser loggedUser = response.getBody();
         return loggedUser;
     }
+    
+    
+    //prowizoryczny POST do wysyłania maili, ponieważ metoda do wysyłania maili z API - nie działa
+    @RequestMapping(value = "/email", method=RequestMethod.POST)
+    public Object SendEmail(String toaddress, String title, String content)
+    {
+        //build json with json-simple-1.1.1.jar
+        JSONObject json = new JSONObject();
+        json.put("toaddress", toaddress);
+        json.put("title", title);
+        json.put("content", content);
+        
+        RestTemplate restTemplate = new RestTemplate();
+        
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        HttpEntity<JSONObject> request = new HttpEntity<JSONObject>(json, headers);
+        ResponseEntity<Object> response = restTemplate.postForEntity("http://212.122.192.216:8097/api/v1/email/send", request , Object.class );
+        
+        Object respons = response.getBody();
+        return respons;
+    }
 }
