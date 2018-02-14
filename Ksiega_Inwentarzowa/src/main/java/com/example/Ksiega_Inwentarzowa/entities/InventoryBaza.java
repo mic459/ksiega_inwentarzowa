@@ -8,31 +8,52 @@ package com.example.Ksiega_Inwentarzowa.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *
  * @author Wanted
  */
 
-@Data
+//@Data
 @Table(name = "inventory")
-@Builder
+//@Builder
 @Entity
-//@Getter @Setter
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class InventoryBaza {
     
     @Id
-    @Column(name = "inventory_number", unique=true, columnDefinition="varchar(45)")
+    @Column(unique=true, columnDefinition="varchar(45)")
     private String inventoryNumber;
-    @Column(name = "cell_name_id", columnDefinition = "bigint")
-    private Long cellNameId;
-    @Column(name = "employee_id", columnDefinition = "integer")
-    private Integer employeeId;
+    
+    @Column(columnDefinition = "bigint")
+    private Long cellId;
+    
+    @ManyToOne
+    @JoinColumn(name="employee_id", columnDefinition = "integer", referencedColumnName="EmployeeId")
+    private EmployeeBaza employeeId;
+    
+    @Column(columnDefinition = "varchar(45)")
+    private String roomId;
+    
+    @Override
+    public String toString() {
+    return "Inventory";//{" +
+            //"inventoryNumber = " + inventoryNumber +
+            //", cellId = '" + cellId + '\'' +
+            //", employeeId = '" + employeeId + '\'' +
+            //", roomId = " + roomId +
+            //'}';
+    }
 }

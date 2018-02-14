@@ -1,0 +1,50 @@
+Jak obs³u¿yæ GITa?
+
+1. https://gitforwindows.org/ - pobraæ (odpowiedni¹ wersjê)
+
+2. zainstalowaæ (wybraæ opcjê Use Git from the Windows Command Prompt, resztê szczegó³owych opcji nie zmieniaæ)
+
+3. Zrobiæ clean projektu:
+W tym celu w NetBeansie klikn¹æ PPM na projekt Ksiega_Inwentarzowa (okno z projektami, po lewej stronie NetBeansa) i wybraæ opcjê Clean (pi¹ta na liœcie). Poczekaæ, a¿ siê zbuilduje.
+(Clean projektu ma na celu zrobienie porz¹dku w projekcie i pozostawienie tylko istotnych elementów takich jak kod Ÿród³owy.)
+
+4. Utworzyæ folder dla gita, np. "GitFolder" na pulpicie
+
+5. Uruchom wiersz poleceñ:
+
+6. Przejœæ do tego folderu w cmd:
+cd Desktop/GitFolder
+
+Przydatne info:
+cd <nazwa folderu> - przejœcie do folderu
+cd .. - przejœcie do nadrzêdnego folderu, cofniêcie siê
+
+7. Za pierwszym razem u¿ywania gita wpisaæ:
+git config --global user.name "Michal"
+git config --global user.email "mic459@wp.pl"
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.up rebase
+git config --global alias.ci commit
+
+8. POBIERANIE REPOZYTORIUM:
+a) krok 6
+b) git clone https://mic459@bitbucket.org/abstergoteam/ksiega_inwentarzowa.git
+c) za pomoc¹ eksploratora Windows wchodzimy do folderu GitFolder/ksiega_inwentarzowa na pulpicie i kopiujemy folder Ksiega_Inwentarzowa do folderu z projektami NetBeans
+
+9. AKTUALIZOWANIE REPOZYTORIUM (UPLOAD):
+a) krok 8a i 8b
+b) za pomoc¹ eksploratora Windows wchodzimy do folderu GitFolder/ksiega_inwentarzowa i usuwamy folder Ksiega_Inwentarzowa
+c) do tego folderu (GitFolder/ksiega_inwentarzowa) za pomoc¹ eksploratora Windows kopiujemy folder z naszym projektem z NetBeansa
+d) Robimy commita (wpisz do cmd; git status opcjonalnie):
+git status
+git add –A
+git status
+git commit -m "TUTAJ NAZWA OPISU COMMITA"
+git status
+e) Upload repozytorium na serwer:
+git push -u https://mic459@bitbucket.org/abstergoteam/ksiega_inwentarzowa.git
+f) Podajemy login i has³o.
+
+10. ¯eby przejrzeæ repozytorium globalne logujemy siê do https://bitbucket.org/ i przechodzimy do https://bitbucket.org/abstergoteam/ksiega_inwentarzowa/src.

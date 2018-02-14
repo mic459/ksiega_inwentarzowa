@@ -21,7 +21,7 @@ public class FindByEmployee extends MyLayout{
     
     List<Inventory> getListByEmployee(Integer employeeId) {
         AppUI app = AppUI.getInstance();
-        ItemsList = updateItemsList(ItemsList, app.repository);
+        ItemsList = updateItemsList(ItemsList, app.inventoryRepository, app.employeeRepository);
         for(int j = ItemsList.size() - 1; j >= 0; j--){
             if(ItemsList.get(j).getEmployeeId() == null){
                 ItemsList.remove(ItemsList.get(j));

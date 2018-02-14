@@ -8,6 +8,7 @@ package com.example.Ksiega_Inwentarzowa;
 import com.example.Ksiega_Inwentarzowa.controller.Controller_Rest;
 import com.example.Ksiega_Inwentarzowa.entities.Cell;
 import com.example.Ksiega_Inwentarzowa.entities.Employee;
+import com.example.Ksiega_Inwentarzowa.entities.EmployeeBaza;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.Grid;
@@ -16,6 +17,7 @@ import com.vaadin.ui.UI;
 import com.example.Ksiega_Inwentarzowa.entities.Inventory;
 import com.example.Ksiega_Inwentarzowa.entities.InventoryBaza;
 import com.example.Ksiega_Inwentarzowa.entities.LoggedUser;
+import com.example.Ksiega_Inwentarzowa.repositories.EmployeeRepository;
 import com.example.Ksiega_Inwentarzowa.repositories.InventoryRepository;
 import com.vaadin.annotations.PreserveOnRefresh;
 import java.util.ArrayList;
@@ -34,7 +36,10 @@ public class AppUI extends UI{
     static LoggedUser loggedUser;
     
     @Autowired
-    InventoryRepository repository;
+    InventoryRepository inventoryRepository;
+    
+    @Autowired
+    EmployeeRepository employeeRepository;
     
     @Autowired
     DataSource dataSource;
@@ -54,6 +59,7 @@ public class AppUI extends UI{
     static Grid<Inventory> ItemsTable;      //static bo odwołujemy się z innych klas do tego
     static List<Inventory> ItemsList;
     static List<InventoryBaza> inventoryBazaList;
+    static List<EmployeeBaza> employeeBazaList;
     
     public static AppUI instance;
     
@@ -118,27 +124,28 @@ public class AppUI extends UI{
         ItemsTable.addColumn(Inventory::getEmployeeName).setCaption("employeeName");
     }
     
-    static List<Inventory> updateItemsList(List<Inventory> ItemsList, InventoryRepository repository) {
+    static List<Inventory> updateItemsList(List<Inventory> ItemsList, InventoryRepository inventoryRepository, EmployeeRepository employeeRepository) {
         Controller_Rest rest = new Controller_Rest();
         ItemsList = rest.getAllItems();
-        inventoryBazaList = GetItemsFromOurBase(repository);
-        addToDataBaseDefaultValuesFromERP(ItemsList, inventoryBazaList, repository);
         List<Cell> Cells = rest.getAllCells();
         List<Employee> Employees = rest.getAllEmployees();
+        employeeBazaList = GetEmployeesFromOurBase(employeeRepository);
+        inventoryBazaList = GetItemsFromOurBase(inventoryRepository);
+        //addToDatabaseDefaultValuesFromERP(ItemsList, Employees, inventoryRepository, employeeRepository);
         for (InventoryBaza itemBaza : inventoryBazaList){
             String id = itemBaza.getInventoryNumber();
             for(Inventory item : ItemsList) {
                 if(item.getInventoryNumber().equals(id)) {
                     for (Cell cell : Cells){
-                        if(cell.getCellId().equals(itemBaza.getCellNameId())){
-                            item.setCellId(itemBaza.getCellNameId());
+                        if(cell.getCellId().equals(itemBaza.getCellId())){
+                            item.setCellId(itemBaza.getCellId());
                             item.setCellName(cell.getCellName());
                             break;
                         }
                     }
                     for (Employee employee : Employees){
-                        if(employee.getEmployeeId().equals(itemBaza.getEmployeeId())){
-                            item.setEmployeeId(itemBaza.getEmployeeId());
+                        if(itemBaza.getEmployeeId() != null && employee.getEmployeeId().equals(itemBaza.getEmployeeId().getEmployeeId())){
+                            item.setEmployeeId(itemBaza.getEmployeeId().getEmployeeId());
                             item.setEmployeeName(employee.getName());
                             break;
                         }
@@ -146,26 +153,67 @@ public class AppUI extends UI{
                 }
             }
         }
-        /*for(InventoryBaza itemBaza : inventoryBazaList){
-            repository.saveAndFlush(itemBaza);
-        }*/
+        //for(EmployeeBaza employeeBaza : employeeBazaList){
+        //    employeeRepository.saveAndFlush(employeeBaza);
+        //}
+        //for(InventoryBaza itemBaza : inventoryBazaList){
+        //    inventoryRepository.saveAndFlush(itemBaza);
+        //}
         return ItemsList;
     }
     
     static List<InventoryBaza> GetItemsFromOurBase(InventoryRepository repository){
         List<InventoryBaza> inventoryBazaList = repository.findAll();
+        for(InventoryBaza i : inventoryBazaList){
+            if (i.getEmployeeId() == null){
+                System.out.println(i.getInventoryNumber() + " - " + null);
+            } else {
+                System.out.println(i.getInventoryNumber() + " - " + i.getEmployeeId().getEmployeeId());
+            }
+        }
         return inventoryBazaList;
     }
     
-    private static void addToDataBaseDefaultValuesFromERP(List<Inventory> ItemsList, List<InventoryBaza> inventoryBazaList, InventoryRepository repository){
-        for(Inventory item : ItemsList){
+    static List<EmployeeBaza> GetEmployeesFromOurBase(EmployeeRepository repository){
+        List<EmployeeBaza> employeeBazaList = repository.findAll();
+        return employeeBazaList;
+    }
+    
+    private static void addToDatabaseDefaultValuesFromERP(List<Inventory> ItemsList, List<Employee> Employees, InventoryRepository inventoryRepository, EmployeeRepository employeeRepository){
+        List<EmployeeBaza> employeeBazaList = new ArrayList<EmployeeBaza>();
+        List<InventoryBaza> inventoryBazaList = new ArrayList<InventoryBaza>();
+        for(Employee employee : Employees){//tworzymy dla bazy obiekty EmployeeBaza i dodajemy do listy tymczasowej
+            EmployeeBaza employeeBaza = new EmployeeBaza();
+            employeeBaza.setEmployeeId(employee.getEmployeeId());
+            employeeBaza.setOddelegowany(false);
+            employeeBaza.setCellId(employee.getCellId());
+            employeeBazaList.add(employeeBaza);
+            employeeRepository.saveAndFlush(employeeBaza);
+        }
+        for(Inventory item : ItemsList){//tworzymy dla bazy obiekty InventoryBaza i dodajemy do listy tymczasowej
             InventoryBaza itemBaza = new InventoryBaza();
             itemBaza.setInventoryNumber(item.getInventoryNumber());
-            itemBaza.setCellNameId(item.getCellId());
-            itemBaza.setEmployeeId(item.getEmployeeId());
-            repository.saveAndFlush(itemBaza);
+            itemBaza.setCellId(item.getCellId());
+            if(item.getEmployeeId() != null){
+                itemBaza.setEmployeeId(employeeRepository.findOne(item.getEmployeeId()));
+            }
+            //itemBaza.setRoomId(null);
+            inventoryBazaList.add(itemBaza);
+            inventoryRepository.saveAndFlush(itemBaza);
+        }
+        for(EmployeeBaza employeeBaza : employeeBazaList){
+            for(InventoryBaza itemBaza : inventoryBazaList){
+                if (itemBaza.getEmployeeId() != null && itemBaza.getEmployeeId().getEmployeeId().equals(employeeBaza.getEmployeeId())){
+                    employeeBaza.getInventoryBazaSet().add(itemBaza);
+                }
+            }
+            employeeRepository.saveAndFlush(employeeBaza);
+        }
+        for(InventoryBaza itemBaza : inventoryBazaList){
+            inventoryRepository.saveAndFlush(itemBaza);
         }
     }
+    
     
     public void setInstance(AppUI instance){
         this.instance = instance;

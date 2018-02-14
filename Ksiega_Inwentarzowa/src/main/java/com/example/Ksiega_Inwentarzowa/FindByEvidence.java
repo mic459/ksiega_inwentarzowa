@@ -39,7 +39,7 @@ public class FindByEvidence extends MyLayout{
     
     List<Inventory> getListByEvidenceNumber(List<Inventory> ItemsList, String WrittenNumber) {
         AppUI app = AppUI.getInstance();
-        ItemsList = updateItemsList(ItemsList, app.repository);
+        ItemsList = updateItemsList(ItemsList, app.inventoryRepository, app.employeeRepository);
         
         int numberOfItems = ItemsList.size();
         for(int i = numberOfItems - 1; i >= 0; i--){

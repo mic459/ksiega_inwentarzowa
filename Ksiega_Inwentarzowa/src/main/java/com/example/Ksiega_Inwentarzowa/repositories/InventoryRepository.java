@@ -15,9 +15,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface InventoryRepository extends JpaRepository<InventoryBaza, String>{
     
-    InventoryBaza findByInventoryNumber(String inventoryNumber);
+    //InventoryBaza findByInventoryNumber(String inventoryNumber);
     
-    List<InventoryBaza> findByCellNameId(Long cellNameId);
+    //List<InventoryBaza> findByCellId(Long cellId);
     
     List<InventoryBaza> findByEmployeeId(Integer employeeId);
     

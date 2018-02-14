@@ -5,7 +5,7 @@
  */
 package com.example.Ksiega_Inwentarzowa.repositories;
 
-import com.example.Ksiega_Inwentarzowa.entities.InventoryBaza;
+import com.example.Ksiega_Inwentarzowa.entities.EmployeeBaza;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -13,12 +13,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author Wanted
  */
-public interface InventoryRepository extends JpaRepository<InventoryBaza, String>{
-    
-    InventoryBaza findByInventoryNumber(String inventoryNumber);
-    
-    List<InventoryBaza> findByCellNameId(Long cellNameId);
-    
-    List<InventoryBaza> findByEmployeeId(Integer employeeId);
-    
-}
+public interface EmployeeRepository extends JpaRepository<EmployeeBaza, Integer>{}
