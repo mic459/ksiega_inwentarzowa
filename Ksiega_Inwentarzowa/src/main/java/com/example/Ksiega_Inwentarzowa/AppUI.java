@@ -17,6 +17,7 @@ import com.vaadin.ui.UI;
 import com.example.Ksiega_Inwentarzowa.entities.Inventory;
 import com.example.Ksiega_Inwentarzowa.entities.InventoryBaza;
 import com.example.Ksiega_Inwentarzowa.entities.LoggedUser;
+import com.example.Ksiega_Inwentarzowa.entities.Room;
 import com.example.Ksiega_Inwentarzowa.repositories.EmployeeRepository;
 import com.example.Ksiega_Inwentarzowa.repositories.InventoryRepository;
 import com.vaadin.annotations.PreserveOnRefresh;
@@ -48,6 +49,7 @@ public class AppUI extends UI{
     
     static Menu menu;
     static FindByEvidence findByEvidence;
+    static FindByCell findByCell;
     static FindByEmployee findByEmployee;
     static LoginLayout loginLayout;
     
@@ -93,6 +95,7 @@ public class AppUI extends UI{
         
         findByEvidence = new FindByEvidence();
         findByEmployee = new FindByEmployee();
+        findByCell = new FindByCell();
         loginLayout = new LoginLayout();
         menu =  new Menu();
         
@@ -122,6 +125,8 @@ public class AppUI extends UI{
         ItemsTable.addColumn(Inventory::getCellName).setCaption("cellName");
         ItemsTable.addColumn(Inventory::getEmployeeId).setCaption("employeeId");
         ItemsTable.addColumn(Inventory::getEmployeeName).setCaption("employeeName");
+        ItemsTable.addColumn(Inventory::getRoomId).setCaption("roomId");
+        ItemsTable.addColumn(Inventory::getRoomName).setCaption("roomName");
     }
     
     static List<Inventory> updateItemsList(List<Inventory> ItemsList, InventoryRepository inventoryRepository, EmployeeRepository employeeRepository) {
@@ -129,6 +134,7 @@ public class AppUI extends UI{
         ItemsList = rest.getAllItems();
         List<Cell> Cells = rest.getAllCells();
         List<Employee> Employees = rest.getAllEmployees();
+        List<Room> Rooms = rest.getAllRooms();
         if(RepositoriesEmpty(inventoryRepository, employeeRepository)){
             addToDatabaseDefaultValuesFromERP(ItemsList, Employees, inventoryRepository, employeeRepository);
         }
@@ -149,6 +155,13 @@ public class AppUI extends UI{
                         if(itemBaza.getEmployeeId() != null && employee.getEmployeeId().equals(itemBaza.getEmployeeId().getEmployeeId())){
                             item.setEmployeeId(itemBaza.getEmployeeId().getEmployeeId());
                             item.setEmployeeName(employee.getName());
+                            break;
+                        }
+                    }
+                    for (Room room : Rooms){
+                        if(room.getRoomId().equals(itemBaza.getRoomId())){
+                            item.setRoomId(itemBaza.getRoomId());
+                            item.setRoomName(room.getRoomName());
                             break;
                         }
                     }

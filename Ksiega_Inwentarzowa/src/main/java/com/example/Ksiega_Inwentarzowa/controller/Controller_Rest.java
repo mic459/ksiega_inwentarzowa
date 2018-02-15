@@ -10,6 +10,7 @@ import com.example.Ksiega_Inwentarzowa.entities.Cell;
 import com.example.Ksiega_Inwentarzowa.entities.Employee;
 import com.example.Ksiega_Inwentarzowa.entities.Inventory;
 import com.example.Ksiega_Inwentarzowa.entities.LoggedUser;
+import com.example.Ksiega_Inwentarzowa.entities.Room;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.JSONObject;
@@ -70,6 +71,18 @@ public class Controller_Rest {
             });
         List<Employee> employees = response.getBody();
         return employees;
+    }
+    
+    @RequestMapping(value = "/room", method=RequestMethod.GET)
+    public List<Room> getAllRooms()
+    {
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<List<Room>> response =
+        restTemplate.exchange("http://212.122.192.216:8097/api/v1/room/all",
+                    HttpMethod.GET, null, new ParameterizedTypeReference<List<Room>>() {
+            });
+        List<Room> rooms = response.getBody();
+        return rooms;
     }
     
     @RequestMapping(value = "/login", method=RequestMethod.POST)

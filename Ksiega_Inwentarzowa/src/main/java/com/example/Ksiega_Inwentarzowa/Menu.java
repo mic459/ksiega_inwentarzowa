@@ -11,6 +11,7 @@ import static com.example.Ksiega_Inwentarzowa.AppUI.czyAdministrator;
 import static com.example.Ksiega_Inwentarzowa.AppUI.czyKierownik;
 import static com.example.Ksiega_Inwentarzowa.AppUI.czyOsobaSEM;
 import static com.example.Ksiega_Inwentarzowa.AppUI.czyUzytkownikOddelegowany;
+import static com.example.Ksiega_Inwentarzowa.AppUI.findByCell;
 import com.vaadin.ui.Button;
 import static com.example.Ksiega_Inwentarzowa.AppUI.findByEvidence;
 import static com.example.Ksiega_Inwentarzowa.AppUI.findByEmployee;
@@ -49,6 +50,15 @@ public class Menu extends MyLayout{
         PrzyciskOddelegowanieOsoby = new Button("Oddeleguj osobę do prowadzenia księgi jednostki");
         
         PrzyciskPodgladMajatkuJednostki = new Button("Podgląd majątku jednostki");
+        PrzyciskPodgladMajatkuJednostki.addClickListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(Button.ClickEvent event) {
+                findByCell.addComponent(ItemsTable);
+                ItemsList = findByCell.getListByCell(loggedUser.getDetails().getCellId());
+                ItemsTable.setItems(ItemsList);
+                findByCell.showLayout();
+            }
+        });
         
         PrzyciskPrzypisanieMiejscaDoElementu = new Button("Przypisz miejsce do elementu");
         

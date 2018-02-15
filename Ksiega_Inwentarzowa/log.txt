@@ -40,3 +40,16 @@ pawel.szymanski	2018-02-14T17:23:52.889	true
 franek	2018-02-14T21:30:02.887	true
 franek	2018-02-14T21:37:00.148	true
 zenek	2018-02-14T21:37:25.400	true
+joanna.wozniak	2018-02-15T11:37:25.264	true
+joanna.wozniak	2018-02-15T11:40:24.371	true
+jkowalski	2018-02-15T11:41:10.245	true
+jkowalski	2018-02-15T11:59:00.152	true
+franek	2018-02-15T12:03:27.666	true
+franek	2018-02-15T12:13:34.909	true
+franek	2018-02-15T12:18:08.025	true
+pnowak	2018-02-15T12:19:18.764	true
+pnowak	2018-02-15T12:21:42.959	true
+franek	2018-02-15T12:21:48.029	true
+franek	2018-02-15T12:24:35.767	true
+pnowak	2018-02-15T12:25:24.549	true
+franek	2018-02-15T12:25:54.532	true

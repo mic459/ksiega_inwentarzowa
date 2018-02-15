@@ -27,11 +27,12 @@ git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.up rebase
 git config --global alias.ci commit
+Wpisaæ w³asne dane!
 
 8. POBIERANIE REPOZYTORIUM:
-a) krok 3
 b) krok 5 i 6
 c) git clone https://mic459@bitbucket.org/abstergoteam/ksiega_inwentarzowa.git
+zamiast mic459 wpisaæ swoj¹ nazwê u¿ytkownika!
 d) za pomoc¹ eksploratora Windows wchodzimy do folderu GitFolder/ksiega_inwentarzowa na pulpicie i kopiujemy folder Ksiega_Inwentarzowa do folderu z projektami NetBeans
 
 9. AKTUALIZOWANIE REPOZYTORIUM (UPLOAD):
@@ -50,6 +51,7 @@ git commit -m "TUTAJ NAZWA OPISU COMMITA"
 git status
 h) Upload repozytorium na serwer:
 git push -u https://mic459@bitbucket.org/abstergoteam/ksiega_inwentarzowa.git
+zamiast mic459 wpisaæ swoj¹ nazwê u¿ytkownika!
 i) Podajemy login i has³o.
 
 10. ¯eby przejrzeæ repozytorium globalne logujemy siê do https://bitbucket.org/ i przechodzimy do https://bitbucket.org/abstergoteam/ksiega_inwentarzowa/src.
