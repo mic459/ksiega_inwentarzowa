@@ -17,7 +17,7 @@ public interface InventoryRepository extends JpaRepository<InventoryBaza, String
     
     //InventoryBaza findByInventoryNumber(String inventoryNumber);
     
-    //List<InventoryBaza> findByCellId(Long cellId);
+    List<InventoryBaza> findByCellId(Long cellId);
     
     List<InventoryBaza> findByEmployeeId(Integer employeeId);
     

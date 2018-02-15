@@ -6,6 +6,7 @@
 package com.example.Ksiega_Inwentarzowa;
 
 import static com.example.Ksiega_Inwentarzowa.AppUI.*;
+import com.example.Ksiega_Inwentarzowa.Utils.Log;
 import com.example.Ksiega_Inwentarzowa.controller.Controller_Rest;
 import com.example.Ksiega_Inwentarzowa.repositories.EmployeeRepository;
 import com.vaadin.server.Page;
@@ -57,25 +58,13 @@ public class LoginLayout extends MyLayout{
         if(loggedUser.isSuccess()){
             CheckUserRuleInSystem();
             menu.showLayout();
-            try {
-                output = new BufferedWriter(new FileWriter("log.txt", true));
-                output.append(login.getValue() + "\t"+ LocalDateTime.now() +  "\ttrue\n");
-                output.close();
-            } catch (IOException ex) {
-                Logger.getLogger(LoginLayout.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Log.logUpdate("Login success\tlogin: " + login.getValue());
+            
         } else {
             Notification message = new Notification("Logowanie nieudane!", "Podano zły login i/lub hasło.");
             message.show(Page.getCurrent());
-            try {
-                output = new BufferedWriter(new FileWriter("log.txt", true));
-                output.append(login.getValue() + "\t"+ LocalDateTime.now() +  "\tfalse\n");
-                output.close();
-            } catch (IOException ex) {
-                Logger.getLogger(LoginLayout.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Log.logUpdate("Login fail\tlogin: " + login.getValue());
         }
-        
         login.setValue("");
         password.setValue("");
     }

@@ -6,6 +6,7 @@
 package com.example.Ksiega_Inwentarzowa;
 
 import static com.example.Ksiega_Inwentarzowa.AppUI.*;
+import com.example.Ksiega_Inwentarzowa.Utils.Log;
 import com.example.Ksiega_Inwentarzowa.controller.Controller_Rest;
 import com.example.Ksiega_Inwentarzowa.entities.Employee;
 import com.example.Ksiega_Inwentarzowa.entities.EmployeeBaza;
@@ -35,6 +36,7 @@ public class SetOddelegowany extends MyLayout{
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 setOddelegowanyProperty(true, comboBox.getValue(), AppUI.getInstance().employeeRepository);
+                Log.logUpdate(comboBox.getValue() + " privileged  true  by " + loggedUser.getDetails().getLogin());
                 Notification message = new Notification("Pracownik oddelegowany!", comboBox.getValue());
                 message.show(Page.getCurrent());
             }
@@ -44,6 +46,7 @@ public class SetOddelegowany extends MyLayout{
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 setOddelegowanyProperty(false, comboBox.getValue(), AppUI.getInstance().employeeRepository);
+                Log.logUpdate(comboBox.getValue() + " privileged  false  by " + loggedUser.getDetails().getLogin());
                 Notification message = new Notification("Pracownik już nie jest oddelegowany!", comboBox.getValue());
                 message.show(Page.getCurrent());
             }

@@ -52,6 +52,7 @@ public class AppUI extends UI{
     static FindByCell findByCell;
     static FindByEmployee findByEmployee;
     static SetOddelegowany setOddelegowany;
+    static SetPersonToInventory setPersonToInventory;
     static LoginLayout loginLayout;
     
     static Boolean czyAdministrator;
@@ -69,6 +70,13 @@ public class AppUI extends UI{
     @Override
     protected void init(VaadinRequest request) {
         setInstance((AppUI) UI.getCurrent());
+        
+        Controller_Rest rest = new Controller_Rest();
+        ItemsList = rest.getAllItems();
+        List<Employee> Employees = rest.getAllEmployees();
+        if(RepositoriesEmpty(inventoryRepository, employeeRepository)){
+            addToDatabaseDefaultValuesFromERP(ItemsList, Employees, inventoryRepository, employeeRepository);
+        }
         
         loggedUser = new Controller_Rest().LoginLogout("", "");
         
@@ -99,6 +107,7 @@ public class AppUI extends UI{
         findByCell = new FindByCell();
         loginLayout = new LoginLayout();
         setOddelegowany = new SetOddelegowany();
+        setPersonToInventory = new SetPersonToInventory();
         menu =  new Menu();
         
         layout.addComponent(loginLayout);
@@ -137,9 +146,9 @@ public class AppUI extends UI{
         List<Cell> Cells = rest.getAllCells();
         List<Employee> Employees = rest.getAllEmployees();
         List<Room> Rooms = rest.getAllRooms();
-        if(RepositoriesEmpty(inventoryRepository, employeeRepository)){
-            addToDatabaseDefaultValuesFromERP(ItemsList, Employees, inventoryRepository, employeeRepository);
-        }
+        //if(RepositoriesEmpty(inventoryRepository, employeeRepository)){
+        //    addToDatabaseDefaultValuesFromERP(ItemsList, Employees, inventoryRepository, employeeRepository);
+        //}
         employeeBazaList = GetEmployeesFromOurBase(employeeRepository);
         inventoryBazaList = GetItemsFromOurBase(inventoryRepository);
         for (InventoryBaza itemBaza : inventoryBazaList){

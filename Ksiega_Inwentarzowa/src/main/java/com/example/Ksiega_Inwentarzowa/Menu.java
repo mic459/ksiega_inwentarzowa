@@ -55,6 +55,14 @@ public class Menu extends MyLayout{
         PrzyciskPrzypisanieMiejscaDoElementu = new Button("Przypisz miejsce do elementu");
         
         PrzyciskPrzypisanieOsoby = new Button("Przypisz osobę do elementu");
+        PrzyciskPrzypisanieOsoby.addClickListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(Button.ClickEvent event) {
+                setPersonToInventory.getEmployeeNames(AppUI.getInstance().employeeRepository);
+                setPersonToInventory.getInventoryNames(AppUI.getInstance().inventoryRepository);
+                setPersonToInventory.showLayout();
+            }
+        });
         
         PrzyciskZlozenieWniosku = new Button("Złóż wniosek do Sekcji Ewidencji Majątku");
         

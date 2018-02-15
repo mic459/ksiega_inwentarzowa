@@ -1,87 +1,56 @@
-joanna.wozniak	2018-02-13T09:23:16.297	true
-franek	2018-02-13T09:23:58.227	true
-franek	2018-02-13T12:41:16.718	true
-zenek	2018-02-13T13:04:23.220	true
-franek	2018-02-13T13:05:08.462	true
-zenek	2018-02-14T12:24:05.342	true
-zenek	2018-02-14T12:46:29.251	true
-zenek	2018-02-14T12:49:37.339	true
-zenek	2018-02-14T12:51:48.112	true
-zenek	2018-02-14T13:03:36.327	true
-zenek	2018-02-14T13:10:42.231	true
-zenek	2018-02-14T13:16:02.767	true
-zenek	2018-02-14T13:16:56.643	true
-zenek	2018-02-14T13:17:36.485	true
-zenek	2018-02-14T13:18:47.227	true
-zenek	2018-02-14T13:20:02.810	true
-zenek	2018-02-14T13:23:37.856	true
-zenek	2018-02-14T13:34:09.266	true
-zenek	2018-02-14T13:38:08.636	true
-zenek	2018-02-14T13:42:44.331	true
-zenek	2018-02-14T13:45:25.005	true
-zenek	2018-02-14T13:50:35.757	true
-zenek	2018-02-14T13:53:43.120	true
-zenek	2018-02-14T14:04:00.590	true
-zenek	2018-02-14T15:05:35.268	true
-zenek	2018-02-14T15:06:38.088	true
-zenek	2018-02-14T15:08:02.925	true
-zenek	2018-02-14T15:19:34.670	true
-zenek	2018-02-14T15:20:46.695	true
-zenek	2018-02-14T15:22:28.996	true
-zenek	2018-02-14T15:28:33.898	true
-zenek	2018-02-14T15:30:38.647	true
-zenek	2018-02-14T15:36:12.910	true
-zenek	2018-02-14T15:41:40.774	true
-zenek	2018-02-14T15:47:49.586	true
-zenek	2018-02-14T16:59:51.821	true
-zenek	2018-02-14T17:00:23.913	true
-zenek	2018-02-14T17:23:40.203	true
-pawel.szymanski	2018-02-14T17:23:52.889	true
-franek	2018-02-14T21:30:02.887	true
-franek	2018-02-14T21:37:00.148	true
-zenek	2018-02-14T21:37:25.400	true
-joanna.wozniak	2018-02-15T11:37:25.264	true
-joanna.wozniak	2018-02-15T11:40:24.371	true
-jkowalski	2018-02-15T11:41:10.245	true
-jkowalski	2018-02-15T11:59:00.152	true
-franek	2018-02-15T12:03:27.666	true
-franek	2018-02-15T12:13:34.909	true
-franek	2018-02-15T12:18:08.025	true
-pnowak	2018-02-15T12:19:18.764	true
-pnowak	2018-02-15T12:21:42.959	true
-franek	2018-02-15T12:21:48.029	true
-franek	2018-02-15T12:24:35.767	true
-pnowak	2018-02-15T12:25:24.549	true
-franek	2018-02-15T12:25:54.532	true
-franek	2018-02-15T13:26:05.742	true
-franek	2018-02-15T13:34:23.026	true
-pnowak	2018-02-15T13:35:54.997	true
-zenek	2018-02-15T13:36:08.951	false
-zenek	2018-02-15T13:36:16.033	true
-franek	2018-02-15T13:36:22.805	true
-zenek	2018-02-15T13:36:34.033	false
-zenek	2018-02-15T13:36:40.111	true
-zenek	2018-02-15T13:37:26.556	true
-franek	2018-02-15T13:37:30.079	true
-zenek	2018-02-15T13:38:09.417	true
-franek	2018-02-15T13:38:13.948	true
-zenek	2018-02-15T13:38:25.139	true
-zenek	2018-02-15T13:39:11.101	true
-zenek	2018-02-15T13:48:13.636	true
-zenek	2018-02-15T13:48:31.523	true
-franek	2018-02-15T13:48:36.563	true
-zenek	2018-02-15T13:48:50.854	true
-franek	2018-02-15T13:49:00.051	true
-zenek	2018-02-15T13:49:06.799	true
-mic	2018-02-15T13:50:31.614	false
-franek	2018-02-15T13:52:30.165	true
-franek	2018-02-15T13:53:26.677	true
-pnowak	2018-02-15T14:10:13.937	true
-franek	2018-02-15T14:10:35.693	true
-franek	2018-02-15T14:14:57.245	true
-pnowak	2018-02-15T14:15:07.399	true
-franek	2018-02-15T14:15:20.885	true
-pnowak	2018-02-15T14:15:33.659	true
-franek	2018-02-15T14:17:37.450	true
-pnowak	2018-02-15T14:17:46.747	true
-franek	2018-02-15T14:18:03.521	true
+Login success	login: franek	time: 2018-02-15T14:33:32.762
+Login fail	login: franek	time: 2018-02-15T14:33:54.149
+Login success	login: franek	time: 2018-02-15T14:39:39.571
+Login success	login: franek	time: 2018-02-15T14:43:11.053
+Zenon Wójcik privileged  true  by franek	time: 2018-02-15T14:43:51.735
+Zenon Wójcik privileged  false  by franek	time: 2018-02-15T14:44:08.999
+Login success	login: franek	time: 2018-02-15T15:57:56.323
+Login success	login: franek	time: 2018-02-15T15:59:52.868
+Login success	login: franek	time: 2018-02-15T16:01:09.547
+Login success	login: franek	time: 2018-02-15T16:05:54.330
+Login success	login: franek	time: 2018-02-15T16:32:15.098
+Login success	login: szymon.zielinski	time: 2018-02-15T16:34:06.594
+Login success	login: pnowak	time: 2018-02-15T16:34:27.045
+Login success	login: franek	time: 2018-02-15T16:35:55.812
+Login success	login: franek	time: 2018-02-15T16:55:23.695
+Login success	login: zenek	time: 2018-02-15T16:56:49.029
+Login success	login: franek	time: 2018-02-15T16:57:19.713
+Login success	login: elaw	time: 2018-02-15T16:58:11.623
+Login success	login: anna.lewandowska	time: 2018-02-15T16:58:50.576
+Login success	login: anna.lewandowska	time: 2018-02-15T16:58:56.833
+Login success	login: szymon.zielinski	time: 2018-02-15T16:59:17.346
+Login success	login: pawel.szymanski	time: 2018-02-15T16:59:48.407
+Login success	login: franek	time: 2018-02-15T17:02:42.285
+Login success	login: pawel.szymanski	time: 2018-02-15T17:05:19.816
+Login success	login: pnowak	time: 2018-02-15T17:05:58.621
+Login success	login: anna.lewandowska	time: 2018-02-15T17:06:35.409
+Login success	login: elaw	time: 2018-02-15T17:06:42.551
+Login success	login: franek	time: 2018-02-15T17:06:51.141
+Login success	login: jkowalski	time: 2018-02-15T17:07:55.122
+Login success	login: szymon.zielinski	time: 2018-02-15T17:08:52.831
+Login success	login: zenek	time: 2018-02-15T17:08:56.620
+Login success	login: pawel.szymanski	time: 2018-02-15T17:08:59.869
+Login success	login: pawel.szymanski	time: 2018-02-15T17:12:19.031
+Login success	login: franek	time: 2018-02-15T17:12:30.491
+Login success	login: franek	time: 2018-02-15T17:21:12.937
+Login success	login: franek	time: 2018-02-15T17:21:38.353
+Login success	login: franek	time: 2018-02-15T17:21:52.175
+Login success	login: franek	time: 2018-02-15T17:25:23.878
+Login success	login: franek	time: 2018-02-15T17:26:19.947
+Login success	login: franek	time: 2018-02-15T17:28:31.754
+Login success	login: franek	time: 2018-02-15T17:30:51.687
+Login success	login: franek	time: 2018-02-15T18:03:27.093
+Login success	login: franek	time: 2018-02-15T18:09:44.612
+Login success	login: franek	time: 2018-02-15T18:12:16.372
+Login success	login: franek	time: 2018-02-15T18:20:00.593
+Login success	login: franek	time: 2018-02-15T18:23:43.341
+Login success	login: franek	time: 2018-02-15T18:33:42.538
+Login success	login: franek	time: 2018-02-15T18:36:58.467
+Login success	login: franek	time: 2018-02-15T18:58:51.076
+Login success	login: franek	time: 2018-02-15T18:59:58.885
+Login success	login: franek	time: 2018-02-15T19:03:13.544
+Login success	login: franek	time: 2018-02-15T19:17:39.463
+Login success	login: franek	time: 2018-02-15T19:22:55.661
+Login success	login: franek	time: 2018-02-15T19:28:43.617
+Login success	login: franek	time: 2018-02-15T19:33:54.045
+Login success	login: franek	time: 2018-02-15T19:37:53.895
