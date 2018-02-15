@@ -7,21 +7,17 @@ package com.example.Ksiega_Inwentarzowa;
 
 import static com.example.Ksiega_Inwentarzowa.AppUI.*;
 import com.example.Ksiega_Inwentarzowa.controller.Controller_Rest;
-import com.example.Ksiega_Inwentarzowa.entities.Inventory;
-import com.example.Ksiega_Inwentarzowa.entities.LoggedUser;
+import com.example.Ksiega_Inwentarzowa.repositories.EmployeeRepository;
 import com.vaadin.server.Page;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.Writer;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -91,7 +87,6 @@ public class LoginLayout extends MyLayout{
     }
     
     void CheckUserRuleInSystem(){
-        czyUzytkownikOddelegowany = false;      //jak na razie nie mamy tego w bazie, więc daje tak żeby nie było null
         if(loggedUser.isSuccess()){
             if(loggedUser.getDetails().getFunction() == null){
                 czyAdministrator = false;
@@ -124,12 +119,21 @@ public class LoginLayout extends MyLayout{
             }
             else{
                 czyOsobaSEM = false;
-            } 
+            }
+            if (Oddelegowany(loggedUser.getDetails().getEmployeeId(), AppUI.getInstance().employeeRepository)){
+                czyUzytkownikOddelegowany = true; 
+            } else {
+                czyUzytkownikOddelegowany = false; 
+            }
         } else {
             czyAdministrator = false;
             czyKierownik = false;
             czyOsobaSEM = false;
         }
+    }
+    
+    boolean Oddelegowany(Integer employeeId, EmployeeRepository employeeRepository){
+        return employeeRepository.findOne(employeeId).getOddelegowany();
     }
     
     void PrintInfoAboutLoggedUserToConsole(){

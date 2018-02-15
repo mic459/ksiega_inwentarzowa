@@ -51,6 +51,7 @@ public class AppUI extends UI{
     static FindByEvidence findByEvidence;
     static FindByCell findByCell;
     static FindByEmployee findByEmployee;
+    static SetOddelegowany setOddelegowany;
     static LoginLayout loginLayout;
     
     static Boolean czyAdministrator;
@@ -97,6 +98,7 @@ public class AppUI extends UI{
         findByEmployee = new FindByEmployee();
         findByCell = new FindByCell();
         loginLayout = new LoginLayout();
+        setOddelegowany = new SetOddelegowany();
         menu =  new Menu();
         
         layout.addComponent(loginLayout);

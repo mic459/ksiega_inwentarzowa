@@ -5,23 +5,8 @@
  */
 package com.example.Ksiega_Inwentarzowa;
 
-import static com.example.Ksiega_Inwentarzowa.AppUI.ItemsList;
-import static com.example.Ksiega_Inwentarzowa.AppUI.ItemsTable;
-import static com.example.Ksiega_Inwentarzowa.AppUI.czyAdministrator;
-import static com.example.Ksiega_Inwentarzowa.AppUI.czyKierownik;
-import static com.example.Ksiega_Inwentarzowa.AppUI.czyOsobaSEM;
-import static com.example.Ksiega_Inwentarzowa.AppUI.czyUzytkownikOddelegowany;
-import static com.example.Ksiega_Inwentarzowa.AppUI.findByCell;
+import static com.example.Ksiega_Inwentarzowa.AppUI.*;
 import com.vaadin.ui.Button;
-import static com.example.Ksiega_Inwentarzowa.AppUI.findByEvidence;
-import static com.example.Ksiega_Inwentarzowa.AppUI.findByEmployee;
-import static com.example.Ksiega_Inwentarzowa.AppUI.layout;
-import static com.example.Ksiega_Inwentarzowa.AppUI.loggedUser;
-import static com.example.Ksiega_Inwentarzowa.AppUI.loginLayout;
-import com.example.Ksiega_Inwentarzowa.entities.Inventory;
-import com.vaadin.ui.Layout;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -48,6 +33,13 @@ public class Menu extends MyLayout{
     
     Menu(){
         PrzyciskOddelegowanieOsoby = new Button("Oddeleguj osobę do prowadzenia księgi jednostki");
+        PrzyciskOddelegowanieOsoby.addClickListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(Button.ClickEvent event) {
+                setOddelegowany.getEmployeeNames(AppUI.getInstance().employeeRepository);
+                setOddelegowany.showLayout();
+            }
+        });
         
         PrzyciskPodgladMajatkuJednostki = new Button("Podgląd majątku jednostki");
         PrzyciskPodgladMajatkuJednostki.addClickListener(new Button.ClickListener() {
