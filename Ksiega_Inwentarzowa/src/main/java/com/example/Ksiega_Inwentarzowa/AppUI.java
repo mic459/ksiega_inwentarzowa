@@ -53,6 +53,7 @@ public class AppUI extends UI{
     static FindByEmployee findByEmployee;
     static SetOddelegowany setOddelegowany;
     static SetPersonToInventory setPersonToInventory;
+    static SetRoomToInventory setRoomToInventory;
     static LoginLayout loginLayout;
     
     static Boolean czyAdministrator;
@@ -108,6 +109,7 @@ public class AppUI extends UI{
         loginLayout = new LoginLayout();
         setOddelegowany = new SetOddelegowany();
         setPersonToInventory = new SetPersonToInventory();
+        setRoomToInventory = new SetRoomToInventory();
         menu =  new Menu();
         
         layout.addComponent(loginLayout);

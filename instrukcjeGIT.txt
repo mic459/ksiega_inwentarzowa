@@ -45,7 +45,7 @@ f) powrót do CMD, wpisujemy:
 cd ksiega_inwentarzowa
 g) Robimy commita (wpisz do cmd; git status opcjonalnie):
 git status
-git add –A
+git add -A
 git status
 git commit -m "TUTAJ NAZWA OPISU COMMITA"
 git status

@@ -54,3 +54,8 @@ Login success	login: franek	time: 2018-02-15T19:22:55.661
 Login success	login: franek	time: 2018-02-15T19:28:43.617
 Login success	login: franek	time: 2018-02-15T19:33:54.045
 Login success	login: franek	time: 2018-02-15T19:37:53.895
+Login success	login: franek	time: 2018-02-16T14:06:50.315
+Login success	login: pawel.szymanski	time: 2018-02-16T14:07:56.116
+Login success	login: pawel.szymanski	time: 2018-02-16T15:00:25.378
+Login success	login: franek	time: 2018-02-16T15:02:57.950
+Login success	login: franek	time: 2018-02-16T15:13:53.543

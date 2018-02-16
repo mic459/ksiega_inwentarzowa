@@ -53,6 +53,14 @@ public class Menu extends MyLayout{
         });
         
         PrzyciskPrzypisanieMiejscaDoElementu = new Button("Przypisz miejsce do elementu");
+        PrzyciskPrzypisanieMiejscaDoElementu.addClickListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(Button.ClickEvent event) {
+                setRoomToInventory.getRoomNames();
+                setRoomToInventory.getInventoryNames(AppUI.getInstance().inventoryRepository);
+                setRoomToInventory.showLayout();
+            }
+        });
         
         PrzyciskPrzypisanieOsoby = new Button("Przypisz osobę do elementu");
         PrzyciskPrzypisanieOsoby.addClickListener(new Button.ClickListener() {

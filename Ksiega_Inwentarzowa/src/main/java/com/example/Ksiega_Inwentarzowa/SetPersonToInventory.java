@@ -56,6 +56,8 @@ public class SetPersonToInventory extends MyLayout{
             public void buttonClick(Button.ClickEvent event) {
                 removePersonFromItem(AppUI.getInstance().employeeRepository, AppUI.getInstance().inventoryRepository);
                 Notification message = new Notification("Usunięto właściciela przedmiotu: ", comboInventories.getValue().getInventoryNumber());
+                getEmployeeNames(AppUI.getInstance().employeeRepository);
+                getInventoryNames(AppUI.getInstance().inventoryRepository);
                 message.show(Page.getCurrent());
             }
         });
@@ -82,12 +84,11 @@ public class SetPersonToInventory extends MyLayout{
     }
     
     void getInventoryNames(InventoryRepository inventoryRepository){
-        AppUI app = AppUI.getInstance();
         List<InventoryBaza> inventoryListByCell = null;
         if(czyAdministrator){
-            inventoryListByCell = app.inventoryRepository.findAll();
+            inventoryListByCell = inventoryRepository.findAll();
         } else {
-            inventoryListByCell = app.inventoryRepository.findByCellId(loggedUser.getDetails().getCellId());
+            inventoryListByCell = inventoryRepository.findByCellId(loggedUser.getDetails().getCellId());
         }
         comboInventories.setSelectedItem(null);
         comboInventories.setItems(inventoryListByCell);
@@ -95,9 +96,6 @@ public class SetPersonToInventory extends MyLayout{
     }
     
     void assignPersonToItem(EmployeeRepository employeeRepository, InventoryRepository inventoryRepository){
-        System.out.println(comboEmployee.getValue());
-        System.out.println(comboInventories.getValue().getInventoryNumber());
-        AppUI app = AppUI.getInstance();
         String employName = comboEmployee.getValue();
         List<Employee> employees = new Controller_Rest().getAllEmployees();
         Integer id = null;
@@ -133,7 +131,6 @@ public class SetPersonToInventory extends MyLayout{
     }
     
     void removePersonFromItem(EmployeeRepository employeeRepository, InventoryRepository inventoryRepository){
-        AppUI app = AppUI.getInstance();
         InventoryBaza item = comboInventories.getValue();
         EmployeeBaza oldItemOwner = item.getEmployeeId();
         if(oldItemOwner != null){
