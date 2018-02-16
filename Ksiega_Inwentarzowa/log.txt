@@ -5,3 +5,7 @@ N-00025688 located true in D108	time: 2018-02-16T15:39:35.972
 N-00025679 located false	time: 2018-02-16T15:39:46.031
 Pawe³ Nowak privileged  true  by franek	time: 2018-02-16T15:40:59.841
 Pawe³ Nowak privileged  false  by franek	time: 2018-02-16T15:41:03.193
+Login success	login: franek	time: 2018-02-16T22:57:50.929
+Login success	login: franek	time: 2018-02-16T23:41:16.067
+Login success	login: franek	time: 2018-02-16T23:44:35.262
+Login success	login: franek	time: 2018-02-16T23:45:57.766

@@ -73,6 +73,12 @@ public class Menu extends MyLayout{
         });
         
         PrzyciskZlozenieWniosku = new Button("Złóż wniosek do Sekcji Ewidencji Majątku");
+        PrzyciskZlozenieWniosku.addClickListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(Button.ClickEvent event) {
+                sendEmail.showLayout();
+            }
+        });
         
         PrzyciskGenerujRaport = new Button("Generuj Raport");
         
