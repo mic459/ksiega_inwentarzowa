@@ -45,6 +45,7 @@ public class SetPersonToInventory extends MyLayout{
                 assignPersonToItem(AppUI.getInstance().employeeRepository, AppUI.getInstance().inventoryRepository);
                 Notification message = new Notification(comboEmployee.getValue() + " został właścicielem przedmiotu:!",
                         comboInventories.getValue().getInventoryNumber());
+                Log.logUpdate(comboInventories.getValue().getInventoryNumber()  + " owned true by " + comboEmployee.getValue());
                 getEmployeeNames(AppUI.getInstance().employeeRepository);
                 getInventoryNames(AppUI.getInstance().inventoryRepository);
                 message.show(Page.getCurrent());
@@ -56,6 +57,7 @@ public class SetPersonToInventory extends MyLayout{
             public void buttonClick(Button.ClickEvent event) {
                 removePersonFromItem(AppUI.getInstance().employeeRepository, AppUI.getInstance().inventoryRepository);
                 Notification message = new Notification("Usunięto właściciela przedmiotu: ", comboInventories.getValue().getInventoryNumber());
+                Log.logUpdate(comboInventories.getValue().getInventoryNumber()  + " owned false ");
                 getEmployeeNames(AppUI.getInstance().employeeRepository);
                 getInventoryNames(AppUI.getInstance().inventoryRepository);
                 message.show(Page.getCurrent());

@@ -45,6 +45,7 @@ public class SetRoomToInventory extends MyLayout{
                 assignRoomToItem(AppUI.getInstance().inventoryRepository);
                 Notification message = new Notification("Przedmiot o ID: " + comboInventories.getValue().getInventoryNumber() +
                         " został przypisany do pokoju:", comboRoom.getValue());
+                Log.logUpdate(comboInventories.getValue().getInventoryNumber()  + " located true in " + comboRoom.getValue());
                 setRoomToInventory.getRoomNames();
                 setRoomToInventory.getInventoryNames(AppUI.getInstance().inventoryRepository);
                 message.show(Page.getCurrent());
@@ -57,6 +58,7 @@ public class SetRoomToInventory extends MyLayout{
                 removeRoomFromItem(AppUI.getInstance().inventoryRepository);
                 Notification message = new Notification("Przedmiot o ID: " + comboInventories.getValue().getInventoryNumber() +
                         " nie jest przypisany do żadnego pokoju!");
+                Log.logUpdate(comboInventories.getValue().getInventoryNumber()  + " located false");
                 setRoomToInventory.getRoomNames();
                 setRoomToInventory.getInventoryNames(AppUI.getInstance().inventoryRepository);
                 message.show(Page.getCurrent());

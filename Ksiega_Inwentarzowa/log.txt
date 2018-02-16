@@ -1,61 +1,7 @@
-Login success	login: franek	time: 2018-02-15T14:33:32.762
-Login fail	login: franek	time: 2018-02-15T14:33:54.149
-Login success	login: franek	time: 2018-02-15T14:39:39.571
-Login success	login: franek	time: 2018-02-15T14:43:11.053
-Zenon Wójcik privileged  true  by franek	time: 2018-02-15T14:43:51.735
-Zenon Wójcik privileged  false  by franek	time: 2018-02-15T14:44:08.999
-Login success	login: franek	time: 2018-02-15T15:57:56.323
-Login success	login: franek	time: 2018-02-15T15:59:52.868
-Login success	login: franek	time: 2018-02-15T16:01:09.547
-Login success	login: franek	time: 2018-02-15T16:05:54.330
-Login success	login: franek	time: 2018-02-15T16:32:15.098
-Login success	login: szymon.zielinski	time: 2018-02-15T16:34:06.594
-Login success	login: pnowak	time: 2018-02-15T16:34:27.045
-Login success	login: franek	time: 2018-02-15T16:35:55.812
-Login success	login: franek	time: 2018-02-15T16:55:23.695
-Login success	login: zenek	time: 2018-02-15T16:56:49.029
-Login success	login: franek	time: 2018-02-15T16:57:19.713
-Login success	login: elaw	time: 2018-02-15T16:58:11.623
-Login success	login: anna.lewandowska	time: 2018-02-15T16:58:50.576
-Login success	login: anna.lewandowska	time: 2018-02-15T16:58:56.833
-Login success	login: szymon.zielinski	time: 2018-02-15T16:59:17.346
-Login success	login: pawel.szymanski	time: 2018-02-15T16:59:48.407
-Login success	login: franek	time: 2018-02-15T17:02:42.285
-Login success	login: pawel.szymanski	time: 2018-02-15T17:05:19.816
-Login success	login: pnowak	time: 2018-02-15T17:05:58.621
-Login success	login: anna.lewandowska	time: 2018-02-15T17:06:35.409
-Login success	login: elaw	time: 2018-02-15T17:06:42.551
-Login success	login: franek	time: 2018-02-15T17:06:51.141
-Login success	login: jkowalski	time: 2018-02-15T17:07:55.122
-Login success	login: szymon.zielinski	time: 2018-02-15T17:08:52.831
-Login success	login: zenek	time: 2018-02-15T17:08:56.620
-Login success	login: pawel.szymanski	time: 2018-02-15T17:08:59.869
-Login success	login: pawel.szymanski	time: 2018-02-15T17:12:19.031
-Login success	login: franek	time: 2018-02-15T17:12:30.491
-Login success	login: franek	time: 2018-02-15T17:21:12.937
-Login success	login: franek	time: 2018-02-15T17:21:38.353
-Login success	login: franek	time: 2018-02-15T17:21:52.175
-Login success	login: franek	time: 2018-02-15T17:25:23.878
-Login success	login: franek	time: 2018-02-15T17:26:19.947
-Login success	login: franek	time: 2018-02-15T17:28:31.754
-Login success	login: franek	time: 2018-02-15T17:30:51.687
-Login success	login: franek	time: 2018-02-15T18:03:27.093
-Login success	login: franek	time: 2018-02-15T18:09:44.612
-Login success	login: franek	time: 2018-02-15T18:12:16.372
-Login success	login: franek	time: 2018-02-15T18:20:00.593
-Login success	login: franek	time: 2018-02-15T18:23:43.341
-Login success	login: franek	time: 2018-02-15T18:33:42.538
-Login success	login: franek	time: 2018-02-15T18:36:58.467
-Login success	login: franek	time: 2018-02-15T18:58:51.076
-Login success	login: franek	time: 2018-02-15T18:59:58.885
-Login success	login: franek	time: 2018-02-15T19:03:13.544
-Login success	login: franek	time: 2018-02-15T19:17:39.463
-Login success	login: franek	time: 2018-02-15T19:22:55.661
-Login success	login: franek	time: 2018-02-15T19:28:43.617
-Login success	login: franek	time: 2018-02-15T19:33:54.045
-Login success	login: franek	time: 2018-02-15T19:37:53.895
-Login success	login: franek	time: 2018-02-16T14:06:50.315
-Login success	login: pawel.szymanski	time: 2018-02-16T14:07:56.116
-Login success	login: pawel.szymanski	time: 2018-02-16T15:00:25.378
-Login success	login: franek	time: 2018-02-16T15:02:57.950
-Login success	login: franek	time: 2018-02-16T15:13:53.543
+Login success	login: franek	time: 2018-02-16T15:38:19.905
+N-00025677 owned true by Franciszek Kowalczyk	time: 2018-02-16T15:39:14.241
+N-00025686 owned false 	time: 2018-02-16T15:39:21.026
+N-00025688 located true in D108	time: 2018-02-16T15:39:35.972
+N-00025679 located false	time: 2018-02-16T15:39:46.031
+Pawe³ Nowak privileged  true  by franek	time: 2018-02-16T15:40:59.841
+Pawe³ Nowak privileged  false  by franek	time: 2018-02-16T15:41:03.193
