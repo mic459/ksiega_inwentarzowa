@@ -7,12 +7,15 @@ package com.example.Ksiega_Inwentarzowa;
 
 import static com.example.Ksiega_Inwentarzowa.AppUI.*;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Label;
 
 /**
  *
  * @author Kamil
  */
 public class Menu extends MyLayout{
+    
+    Label Greeting;
     
     Button PrzyciskOddelegowanieOsoby;
     
@@ -32,6 +35,8 @@ public class Menu extends MyLayout{
     Button Wyloguj;
     
     Menu(){
+        Greeting = new Label("Witaj");
+        
         PrzyciskOddelegowanieOsoby = new Button("Oddeleguj osobę do prowadzenia księgi jednostki");
         PrzyciskOddelegowanieOsoby.addClickListener(new Button.ClickListener() {
             @Override
@@ -122,6 +127,8 @@ public class Menu extends MyLayout{
     protected void showLayout(){
         super.showLayout(); //wywołuje metodę showLayout() z klasy nadrzędnej
         this.removeAllComponents();
+        Greeting.setValue("Witaj, " + loggedUser.getDetails().getName() + ".");
+        this.addComponent(Greeting);
         if(czyAdministrator | czyKierownik){
             this.addComponent(PrzyciskOddelegowanieOsoby);
         }
